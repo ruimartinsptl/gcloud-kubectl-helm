@@ -29,7 +29,7 @@ RUN apk update && apk add --no-cache --virtual .build-deps \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl && \
     echo "You installed kubectl version 'v$KUBECTL_VERSION' the last release is '$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)'." && \
-    RUN curl -OL https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz && \
+    curl -OL https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz && \
     tar xzf helm-v${HELM_VERSION}-linux-amd64.tar.gz && \
     rm helm-v${HELM_VERSION}-linux-amd64.tar.gz && \
     mv linux-amd64/helm /usr/local/bin/helm && \
